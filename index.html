@@ -3,139 +3,500 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Related Companies Plumbing Services | Houston Commercial Plumbing</title>
-  <meta name="description" content="Expert commercial plumbing services in Houston, TX. 24/7 emergency response. Licensed & insured.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Related Companies Plumbing Services | Expert Commercial Plumbing</title>
+  <meta name="description" content="Expert commercial plumbing services. 24/7 emergency response, licensed & insured. Related to reliability.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Sticky Emergency Banner -->
   <div class="emergency-banner">
     <span>24/7 Emergency Service Available</span>
     <a href="tel:8324791950" class="banner-phone">Call (832) 479-1950</a>
   </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo-link">
+  <!-- Sticky Navigation -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#home" class="logo-link">
         <img src="logo.png" alt="Related Companies Plumbing Services" class="nav-logo">
       </a>
-      <nav class="main-nav">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Projects</a>
-        <a href="#contact">Contact</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#why-us" class="nav-link">Why Us</a>
+        <a href="#gallery" class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <a href="tel:8324791950" class="nav-cta btn btn-primary">Call Now</a>
+      <a href="tel:8324791950" class="nav-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <video class="hero-logo" autoplay loop muted playsinline>
-          <source src="logo-anim.mp4" type="video/mp4">
-          <img src="logo.png" alt="Related Companies Plumbing Services">
-        </video>
-
-        <h1>Expert Commercial Plumbing<br><span class="accent">— Related to Reliability</span></h1>
-        <p class="hero-sub">24/7 Emergency Response • Licensed & Insured • Serving Houston & Surrounding Areas</p>
-        <div class="hero-ctas">
-          <a href="tel:8324791950" class="btn btn-primary">Call (832) 479-1950</a>
-          <a href="#contact" class="btn btn-secondary">Request a Quote</a>
-        </div>
-
-        <div class="stamp-row">
-          <img src="texas-stamp.png" alt="Texas Top Choice Commercial Plumber" class="texas-stamp">
+  <!-- Vertical Wrench Rail (Desktop) -->
+  <aside class="wrench-rail" id="wrenchRail" aria-hidden="true">
+    <div class="rail-line"></div>
+    <div class="wrench-track">
+      <div class="sliding-wrench" id="slidingWrench">
+        <div class="wrench-inner" id="wrenchInner">
+        <svg viewBox="0 0 80 200" class="wrench-svg" xmlns="http://www.w3.org/2000/svg">
+          <!-- Main handle -->
+          <rect x="33" y="85" width="14" height="105" rx="4" fill="#C87533"/>
+          <rect x="35" y="90" width="10" height="95" rx="2" fill="#B8652B"/>
+          <!-- Grip texture -->
+          <line x1="33" y1="105" x2="47" y2="105" stroke="#1A2F4A" stroke-width="1.8"/>
+          <line x1="33" y1="120" x2="47" y2="120" stroke="#1A2F4A" stroke-width="1.8"/>
+          <line x1="33" y1="135" x2="47" y2="135" stroke="#1A2F4A" stroke-width="1.8"/>
+          <line x1="33" y1="150" x2="47" y2="150" stroke="#1A2F4A" stroke-width="1.8"/>
+          <line x1="33" y1="165" x2="47" y2="165" stroke="#1A2F4A" stroke-width="1.8"/>
+          <!-- Fixed jaw (top) -->
+          <path d="M18 20 L62 20 L58 48 L22 48 Z" fill="#C87533"/>
+          <path d="M22 24 L58 24 L55 44 L25 44 Z" fill="#D48A45"/>
+          <!-- Adjustable jaw -->
+          <path d="M22 8 L58 8 L55 28 L25 28 Z" fill="#C87533"/>
+          <path d="M26 11 L54 11 L52 25 L28 25 Z" fill="#E08A3C"/>
+          <!-- Adjustment screw / nut -->
+          <circle cx="40" cy="38" r="9" fill="#1A2F4A"/>
+          <circle cx="40" cy="38" r="5" fill="#5B9BB8"/>
+          <rect x="36" y="48" width="8" height="12" rx="1" fill="#1A2F4A"/>
+          <!-- Small detail lines on jaws -->
+          <line x1="28" y1="32" x2="52" y2="32" stroke="#1A2F4A" stroke-width="1"/>
+        </svg>
         </div>
       </div>
+    </div>
+    <div class="section-markers">
+      <div class="marker" data-section="home"></div>
+      <div class="marker" data-section="services"></div>
+      <div class="marker" data-section="about"></div>
+      <div class="marker" data-section="why-us"></div>
+      <div class="marker" data-section="gallery"></div>
+      <div class="marker" data-section="testimonials"></div>
+      <div class="marker" data-section="contact"></div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+                <video class="hero-logo" autoplay loop muted playsinline>
+            <source src="logo-anim.mp4" type="video/mp4">
+            <img src="logo.png" alt="Related Companies Plumbing Services Logo">
+          </video>
+        <h1>Expert Commercial Plumbing<br><span class="accent">— Related to Reliability</span></h1>
+        <p class="hero-sub">24/7 Emergency Response • Licensed & Insured • Serving Businesses Across the Region</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Request a Quote</a>
+          <a href="tel:8324791950" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (832) 479-1950
+          </a>
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
     </section>
 
-    <section id="services" class="section">
+    <!-- SERVICES -->
+    <section id="services" class="section services">
       <div class="container">
         <div class="section-header">
           <span class="section-label">What We Do</span>
           <h2>Commercial Plumbing Services</h2>
+          <p>From emergency repairs to full system installations, we keep your business flowing.</p>
         </div>
         <div class="services-grid">
-          <div class="service-card"><h3>Emergency Repairs</h3><p>Fast 24/7 response for leaks, clogs, broken pipes, and system failures.</p></div>
-          <div class="service-card"><h3>New Construction</h3><p>Complete rough-in and finish plumbing for commercial buildings and remodels.</p></div>
-          <div class="service-card"><h3>Water Heaters & Boilers</h3><p>Installation, repair, and maintenance of commercial water heating systems.</p></div>
-          <div class="service-card"><h3>Backflow Prevention</h3><p>Testing, repair, and certification to keep your water supply protected.</p></div>
-          <div class="service-card"><h3>Drain Cleaning</h3><p>High-pressure jetting and camera inspection for main lines and laterals.</p></div>
-          <div class="service-card"><h3>Preventative Maintenance</h3><p>Scheduled service plans that reduce downtime and extend equipment life.</p></div>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 4v8M24 36v8M8 24H4M44 24h-4M12.5 12.5l-3-3M38.5 38.5l-3-3M12.5 35.5l-3 3M38.5 9.5l-3 3" stroke="#C87533" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="10" stroke="#C87533" stroke-width="3"/></svg>
+            </div>
+            <h3>24/7 Emergency Service</h3>
+            <p>Fast response when you need it most. Leaks, clogs, burst pipes — our team is ready around the clock for critical failures.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 36V12a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v24" stroke="#C87533" stroke-width="3"/><path d="M16 20h16M16 28h10" stroke="#C87533" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Commercial Installations & Repairs</h3>
+            <p>New construction, remodels, or system upgrades. Code-compliant work built to last for multi-unit, retail, and industrial facilities.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 8c-8 0-14 6-14 14 0 10 14 18 14 18s14-8 14-18c0-8-6-14-14-14z" stroke="#C87533" stroke-width="3"/><circle cx="24" cy="22" r="5" stroke="#C87533" stroke-width="3"/></svg>
+            </div>
+            <h3>Drain Cleaning & Hydro Jetting</h3>
+            <p>Powerful hydro-jetting and camera inspections clear the toughest blockages and keep your lines flowing freely.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="14" y="10" width="20" height="28" rx="3" stroke="#C87533" stroke-width="3"/><path d="M20 18h8M20 24h8M20 30h5" stroke="#C87533" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Water Heaters & Boilers</h3>
+            <p>Installation, repair, and maintenance of commercial water heating systems for consistent, efficient performance.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M12 32c0-6 4-12 12-12s12 6 12 12" stroke="#C87533" stroke-width="3"/><circle cx="24" cy="18" r="6" stroke="#C87533" stroke-width="3"/><path d="M18 36h12" stroke="#C87533" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Backflow Prevention</h3>
+            <p>Testing, installation, and certification to protect your water supply and meet municipal requirements.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 24h32M16 16v16M32 16v16" stroke="#C87533" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="4" fill="#C87533"/></svg>
+            </div>
+            <h3>Preventative Maintenance</h3>
+            <p>Scheduled programs that catch issues early, reduce downtime, and extend the life of your plumbing systems.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-content">
           <span class="section-label">Who We Are</span>
           <h2>Related Companies Plumbing Services</h2>
+          <p>For over 15 years, Related Companies Plumbing Services has delivered dependable commercial plumbing solutions across the region. Our experienced technicians combine technical expertise with a commitment to honesty, safety, and quality workmanship.</p>
+          <p>Whether it's a multi-unit residential complex, restaurant, medical facility, or industrial plant, we treat every project with the same precision and care. We understand that downtime costs money — so we show up prepared, work efficiently, and stand behind every job.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Emergency Ready</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Licensed & Insured</span>
+            </div>
+          </div>
         </div>
-        <p class="about-text">We specialize in commercial plumbing for restaurants, offices, multi-family, industrial, and institutional facilities across the Houston metro area. From emergency repairs to full system installations, our licensed team delivers reliable workmanship and clear communication every time.</p>
+        <div class="about-visual">
+          <img src="images/pump-room-crew.jpg" alt="Related Companies team working on commercial pump systems" class="about-img">
+        </div>
       </div>
     </section>
 
-    <section id="gallery" class="section">
+    <!-- WHY US -->
+    <section id="why-us" class="section why-us">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Difference</span>
+          <h2>Why Choose Related Companies</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-number">01</div>
+            <h3>Rapid Response</h3>
+            <p>True 24/7 emergency availability. When pipes fail, we move fast to protect your property and operations.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-number">02</div>
+            <h3>Transparent Pricing</h3>
+            <p>Clear quotes up front. No surprise fees. You know exactly what you're paying before we start work.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-number">03</div>
+            <h3>Commercial Specialists</h3>
+            <p>We live and breathe commercial systems — high-volume, complex, and code-intensive work is our daily business.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-number">04</div>
+            <h3>Guaranteed Work</h3>
+            <p>We stand behind every repair and installation. Your satisfaction and system reliability are our reputation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Our Work</span>
           <h2>Recent Projects</h2>
+          <p>Real commercial and industrial plumbing work by Related Companies. From kitchens and restrooms to mechanical rooms and underground systems.</p>
         </div>
         <div class="gallery-grid">
-          <div class="gallery-item"><img src="images/commercial-triple-sink.jpg" alt="Commercial triple sink" loading="lazy"><div class="gallery-caption">Commercial Kitchen Sink</div></div>
-          <div class="gallery-item"><img src="images/restroom-double-vanity.jpg" alt="Restroom vanity" loading="lazy"><div class="gallery-caption">Restroom Vanity</div></div>
-          <div class="gallery-item"><img src="images/rheem-water-heater.jpg" alt="Water heater" loading="lazy"><div class="gallery-caption">Water Heater Install</div></div>
-          <div class="gallery-item"><img src="images/toilet-flushometer.jpg" alt="Flushometer toilet" loading="lazy"><div class="gallery-caption">Commercial Toilet</div></div>
-          <div class="gallery-item"><img src="images/fire-sprinkler-valve.jpg" alt="Fire valve" loading="lazy"><div class="gallery-caption">Fire Protection</div></div>
-          <div class="gallery-item"><img src="images/copper-gas-lines.jpg" alt="Gas lines" loading="lazy"><div class="gallery-caption">Gas Piping</div></div>
-          <div class="gallery-item"><img src="images/mechanical-room.jpg" alt="Mechanical room" loading="lazy"><div class="gallery-caption">Mechanical Room</div></div>
-          <div class="gallery-item"><img src="images/backflow-prevention.jpg" alt="Backflow" loading="lazy"><div class="gallery-caption">Backflow Preventer</div></div>
-          <div class="gallery-item"><img src="images/underground-piping.jpg" alt="Underground" loading="lazy"><div class="gallery-caption">Underground Piping</div></div>
-          <div class="gallery-item"><img src="images/pvi-boiler.jpg" alt="Boiler" loading="lazy"><div class="gallery-caption">Commercial Boiler</div></div>
-          <div class="gallery-item"><img src="images/pump-room-crew.jpg" alt="Crew" loading="lazy"><div class="gallery-caption">On-Site Installation</div></div>
-          <div class="gallery-item"><img src="images/water-tank.jpg" alt="Water tank" loading="lazy"><div class="gallery-caption">Water Storage</div></div>
+          <div class="gallery-item">
+            <img src="images/commercial-triple-sink.jpg" alt="Commercial 3-compartment stainless steel sink" loading="lazy">
+            <div class="gallery-caption">Commercial 3-Compartment Sink</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/restroom-double-vanity.jpg" alt="Double restroom vanity installation" loading="lazy">
+            <div class="gallery-caption">Restroom Vanity Upgrade</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/rheem-water-heater.jpg" alt="Rheem Performance Platinum water heater" loading="lazy">
+            <div class="gallery-caption">Rheem Water Heater Install</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/commercial-kitchen-sink.jpg" alt="Commercial kitchen sink and pre-rinse" loading="lazy">
+            <div class="gallery-caption">Commercial Kitchen Plumbing</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/toilet-flushometer.jpg" alt="Commercial toilet with flushometer" loading="lazy">
+            <div class="gallery-caption">Flushometer Toilet Install</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/accessible-restroom.jpg" alt="Accessible restroom installation" loading="lazy">
+            <div class="gallery-caption">Accessible Restroom</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/backflow-prevention.jpg" alt="Backflow prevention assembly" loading="lazy">
+            <div class="gallery-caption">Backflow Prevention</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/industrial-valve.jpg" alt="Industrial valve and piping" loading="lazy">
+            <div class="gallery-caption">Industrial Process Piping</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/copper-gas-lines.jpg" alt="Copper and gas line work" loading="lazy">
+            <div class="gallery-caption">Copper & Gas Lines</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/underground-piping.jpg" alt="Underground pipe installation" loading="lazy">
+            <div class="gallery-caption">Underground Piping</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/pump-room-crew.jpg" alt="Mechanical room and pump systems" loading="lazy">
+            <div class="gallery-caption">Pump Room Systems</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/pvi-boiler.jpg" alt="PVI commercial water heater controls" loading="lazy">
+            <div class="gallery-caption">Commercial Boiler Controls</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/mechanical-room.jpg" alt="Large mechanical room piping" loading="lazy">
+            <div class="gallery-caption">Mechanical Room</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/orange-gas-hoses.jpg" alt="Flexible gas line connections" loading="lazy">
+            <div class="gallery-caption">Gas Line Connections</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/fire-sprinkler-valve.jpg" alt="Fire protection valve assembly" loading="lazy">
+            <div class="gallery-caption">Fire Protection Systems</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="section section-alt">
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section testimonials">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Client Feedback</span>
           <h2>What Our Clients Say</h2>
         </div>
         <div class="testimonials-grid">
-          <blockquote class="testimonial"><p>"Related Companies handled a major drain failure at our restaurant with speed and professionalism. Minimal downtime."</p><cite>— Restaurant Owner</cite></blockquote>
-          <blockquote class="testimonial"><p>"We've used them for multiple properties. Always reliable, always fair. Our go-to commercial plumber."</p><cite>— Property Manager</cite></blockquote>
-          <blockquote class="testimonial"><p>"Emergency call at 2 AM — they were on site within the hour and prevented major water damage."</p><cite>— Facility Manager</cite></blockquote>
+          <blockquote class="testimonial-card">
+            <p>"Related Companies handled a major commercial remodel for us. On time, on budget, and zero issues after the fact. Highly professional crew."</p>
+            <footer>
+              <strong>Marcus T.</strong>
+              <span>Property Manager, Multi-Unit Complex</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"When our restaurant's main line backed up on a Saturday night, they were on site within 45 minutes. Saved our weekend. True emergency partners."</p>
+            <footer>
+              <strong>Elena R.</strong>
+              <span>Owner, Downtown Bistro</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"We've used them for preventative maintenance across three facilities for years. Consistent quality and honest recommendations every time."</p>
+            <footer>
+              <strong>David K.</strong>
+              <span>Facilities Director</span>
+            </footer>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Get In Touch</span>
+          <h2>Request a Quote or Schedule Service</h2>
+          <p>Tell us about your project or emergency. We'll respond promptly.</p>
+        </div>
+        <div class="contact-grid">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Smith">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(832) 479-1950">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@company.com">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="emergency">Emergency Repair</option>
+                <option value="install">Installation / Remodel</option>
+                <option value="drain">Drain Cleaning</option>
+                <option value="waterheater">Water Heater / Boiler</option>
+                <option value="backflow">Backflow Prevention</option>
+                <option value="maintenance">Preventative Maintenance</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Describe the issue or project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+          </form>
+          <div class="contact-info">
+            <div class="info-block">
+              <h3>Call Us</h3>
+              <a href="tel:8324791950" class="info-link phone">(832) 479-1950</a>
+              <p>Available 24/7 for emergencies</p>
+            </div>
+            <div class="info-block">
+              <h3>Email</h3>
+              <a href="mailto:service@relatedplumbing.com" class="info-link">service@relatedplumbing.com</a>
+            </div>
+            <div class="info-block">
+              <h3>Service Area</h3>
+              <p>Serving commercial properties across the greater metro region and surrounding areas.</p>
+            </div>
+            <div class="info-block">
+              <h3>Hours</h3>
+              <p>Mon–Fri: 7:00 AM – 6:00 PM<br>Emergency Service: 24/7</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Related Companies Plumbing Services" class="footer-logo">
+        <p>Expert commercial plumbing solutions you can rely on. Licensed, insured, and ready when you need us.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#gallery">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <a href="tel:8324791950">(832) 479-1950</a>
+        <a href="mailto:service@relatedplumbing.com">service@relatedplumbing.com</a>
+        <p class="license">Licensed & Insured<br>License # [PLACEHOLDER]</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Related Companies Plumbing Services. All rights reserved.</p>
+      <p class="placeholder-note">This is a concept prototype. Replace placeholders with real business details.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Client Feedback</span>
+          <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial">
+            <p>"Related Companies handled a major drain failure at our restaurant with speed and professionalism. Minimal downtime, excellent communication."</p>
+            <cite>— Restaurant Owner</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"We've used them for multiple properties. Always reliable, always fair. Our go-to commercial plumber."</p>
+            <cite>— Property Manager</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Emergency call at 2 AM, they were on site within the hour. Fixed the issue and prevented major water damage. Highly recommend."</p>
+            <cite>— Facility Manager</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
       <div class="container contact-grid">
         <div class="contact-info">
           <span class="section-label">Get In Touch</span>
           <h2>Request a Quote or Schedule Service</h2>
-          <p>Tell us about your project or emergency. We respond quickly.</p>
+          <p>Tell us about your project or emergency. We respond quickly and provide clear next steps.</p>
           <div class="info-blocks">
-            <div class="info-block"><h3>Phone</h3><a href="tel:8324791950">(832) 479-1950</a></div>
-            <div class="info-block"><h3>Address</h3><p>2401 Fountain View Dr. Ste 464<br>Houston, TX 77057<br>United States</p></div>
-            <div class="info-block"><h3>Service Area</h3><p>Houston metro & surrounding areas</p></div>
-            <div class="info-block"><h3>Hours</h3><p>Mon–Fri: 7:00 AM – 6:00 PM<br>Emergency: 24/7</p></div>
+            <div class="info-block">
+              <h3>Phone</h3>
+              <a href="tel:8324791950">(832) 479-1950</a>
+            </div>
+            <div class="info-block">
+              <h3>Email</h3>
+              <a href="mailto:service@relatedplumbing.com">service@relatedplumbing.com</a>
+            </div>
+            <div class="info-block">
+              <h3>Service Area</h3>
+              <p>Greater metro region and surrounding areas.</p>
+            </div>
+            <div class="info-block">
+              <h3>Hours</h3>
+              <p>Mon–Fri: 7:00 AM – 6:00 PM<br>Emergency Service: 24/7</p>
+            </div>
           </div>
         </div>
         <div class="contact-form-wrap">
           <form id="contactForm" class="contact-form">
             <div class="form-row">
-              <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required placeholder="Your name"></div>
-              <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required placeholder="(832) 000-0000"></div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(832) 479-1950">
+              </div>
             </div>
-            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required placeholder="you@company.com"></div>
-            <div class="form-group"><label for="service">Service Needed</label>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
               <select id="service" name="service">
                 <option value="">Select a service...</option>
                 <option>Emergency Repair</option>
@@ -147,7 +508,10 @@
                 <option>Other / Quote</option>
               </select>
             </div>
-            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Describe the issue or project..."></textarea></div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Describe the issue or project..."></textarea>
+            </div>
             <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
             <p class="form-note">This is a demo form. In production it will send to your email or CRM.</p>
           </form>
@@ -156,6 +520,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -166,18 +531,20 @@
         <h4>Quick Links</h4>
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#why-us">Why Us</a>
         <a href="#gallery">Projects</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
         <a href="tel:8324791950">(832) 479-1950</a>
-        <p>2401 Fountain View Dr. Ste 464<br>Houston, TX 77057</p>
-        <p class="license">Licensed & Insured</p>
+        <a href="mailto:service@relatedplumbing.com">service@relatedplumbing.com</a>
+        <p class="license">Licensed & Insured<br>License # [PLACEHOLDER]</p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Related Companies Plumbing Services. All rights reserved.</p>
+      <p class="placeholder-note">This is a concept prototype. Replace placeholders with real business details.</p>
     </div>
   </footer>
 
