@@ -1,0 +1,230 @@
+/* Related Companies Plumbing Services - Clean Professional Beige Theme */
+:root {
+  --bg: #F5F0E6;
+  --bg-alt: #EDE7D9;
+  --bg-card: #FFFFFF;
+  --copper: #C87533;
+  --copper-hover: #D98942;
+  --navy: #1A2F4A;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --border: rgba(200, 117, 51, 0.18);
+  --shadow: 0 4px 18px rgba(0,0,0,0.07);
+  --radius: 10px;
+  --header-h: 76px;
+  --banner-h: 38px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+/* Emergency Banner */
+.emergency-banner {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--banner-h);
+  background: var(--navy); color: #fff;
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  font-size: 13.5px; font-weight: 500; z-index: 1001;
+}
+.banner-phone { color: #fff; font-weight: 600; text-decoration: underline; }
+
+/* Header */
+.site-header {
+  position: fixed; top: var(--banner-h); left: 0; right: 0; height: var(--header-h);
+  background: rgba(245, 240, 230, 0.97); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border); z-index: 1000;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.nav-logo {
+  height: 52px; width: 52px; border-radius: 50%; object-fit: cover;
+  background: #fff; padding: 3px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.main-nav { display: flex; gap: 26px; }
+.main-nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 14.5px; }
+.main-nav a:hover { color: var(--copper); }
+.nav-cta { padding: 9px 18px; font-size: 13.5px; }
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: 13px 26px; border-radius: 8px;
+  font-weight: 600; text-decoration: none; transition: 0.2s; border: none;
+  cursor: pointer; font-size: 14.5px; font-family: inherit;
+}
+.btn-primary { background: var(--copper); color: #fff; }
+.btn-primary:hover { background: var(--copper-hover); }
+.btn-secondary { background: transparent; color: var(--text); border: 2px solid var(--copper); }
+.btn-secondary:hover { background: var(--copper); color: #fff; }
+.btn-full { width: 100%; text-align: center; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: calc(var(--header-h) + var(--banner-h) + 36px) 0 50px;
+  text-align: center;
+  background: var(--bg);
+}
+.hero-logo, video.hero-logo {
+  width: 340px;
+  max-width: 88vw;
+  height: auto;
+  margin: 0 auto 28px;
+  display: block;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+.hero h1 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.hero .accent { color: var(--copper); }
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+.hero-ctas {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;
+}
+
+/* Stamp below CTAs, right side */
+.stamp-row {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-right: 8px;
+}
+.texas-stamp {
+  width: 150px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.12));
+}
+
+/* Sections */
+.section { padding: 64px 0; }
+.section-alt { background: var(--bg-alt); }
+.section-header { text-align: center; margin-bottom: 36px; }
+.section-label {
+  display: inline-block; color: var(--copper); font-weight: 600;
+  font-size: 12.5px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 6px;
+}
+.section-header h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
+
+/* Services */
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px;
+}
+.service-card {
+  background: var(--bg-card); padding: 26px; border-radius: var(--radius);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.service-card:hover { transform: translateY(-3px); }
+.service-card h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.1rem; }
+.service-card p { color: var(--text-muted); font-size: 0.93rem; }
+
+/* About */
+.about-text {
+  max-width: 680px; margin: 0 auto; text-align: center;
+  font-size: 1.05rem; color: var(--text-muted);
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px;
+}
+.gallery-item {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  aspect-ratio: 4/3; box-shadow: var(--shadow);
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.3s; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-caption {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.72));
+  color: #fff; font-size: 13px; font-weight: 500;
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px;
+}
+.testimonial {
+  background: var(--bg-card); padding: 26px; border-radius: var(--radius);
+  border-left: 4px solid var(--copper); box-shadow: var(--shadow);
+}
+.testimonial p { font-style: italic; margin-bottom: 10px; }
+.testimonial cite { color: var(--text-muted); font-size: 0.88rem; }
+
+/* Contact */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+}
+@media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
+.info-blocks { display: grid; gap: 18px; margin-top: 24px; }
+.info-block h3 {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--copper); margin-bottom: 3px;
+}
+.info-block a, .info-block p { color: var(--text); text-decoration: none; font-weight: 500; }
+
+.contact-form {
+  background: var(--bg-card); padding: 28px; border-radius: var(--radius);
+  box-shadow: var(--shadow); border: 1px solid var(--border);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 5px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 11px 13px; border: 1px solid #ddd; border-radius: 7px;
+  font-size: 14.5px; font-family: inherit; background: #fff;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--copper);
+}
+.form-note { font-size: 11.5px; color: var(--text-muted); margin-top: 10px; text-align: center; }
+
+/* Footer */
+.site-footer { background: var(--navy); color: #ddd; padding: 46px 0 0; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; padding-bottom: 36px;
+}
+@media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-logo {
+  height: 58px; width: 58px; border-radius: 50%; background: #fff; padding: 3px; margin-bottom: 10px;
+}
+.footer-brand p { font-size: 0.92rem; opacity: 0.85; max-width: 260px; }
+.footer-links h4, .footer-contact h4 { color: #fff; margin-bottom: 12px; font-size: 0.95rem; }
+.footer-links a, .footer-contact a {
+  display: block; color: #ccc; text-decoration: none; margin-bottom: 7px; font-size: 0.92rem;
+}
+.footer-links a:hover, .footer-contact a:hover { color: var(--copper); }
+.footer-contact p { font-size: 0.92rem; margin-bottom: 7px; opacity: 0.9; }
+.license { font-size: 0.82rem; opacity: 0.65; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1); padding: 16px 22px;
+  text-align: center; font-size: 0.82rem; opacity: 0.65;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .main-nav { display: none; }
+  .stamp-row { justify-content: center; }
+  .texas-stamp { width: 130px; }
+}
