@@ -20,22 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========== CONTACT FORM (placeholder) ==========
+  // ========== CONTACT FORM ==========
+  // Let the form POST normally to Formsubmit (no preventDefault)
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+    contactForm.addEventListener('submit', () => {
       const btn = contactForm.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Request Received!';
-      btn.disabled = true;
-      btn.style.background = '#2E7D32';
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.disabled = false;
-        btn.style.background = '';
-        contactForm.reset();
-      }, 3000);
+      if (btn) {
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+      }
     });
   }
 
@@ -47,31 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
 
   if (!wrench || !rail) {
-    // Still handle nav active even without wrench
-    setupNavObserver();
     return;
   }
 
-  // Position markers dynamically based on actual section positions
-  function positionMarkers() {
-    const railRect = rail.getBoundingClientRect();
-    const railTop = rail.offsetTop; // relative? better use scroll positions
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    
-    sections.forEach(section => {
-      const id = section.id;
-      const marker = document.querySelector(`.marker[data-section="${id}"]`);
-      if (!marker) return;
-      
-      // Approximate progress of section start
-      const sectionTop = section.offsetTop;
-      const progress = Math.min(Math.max(sectionTop / (document.documentElement.scrollHeight - window.innerHeight * 0.5), 0), 1);
-      // For visual, keep CSS percentages or set top %
-      // We'll leave CSS positions and just use for active state
-    });
-  }
-
-  // Smooth wrench position based on scroll progress
   let ticking = false;
   
   function updateWrench() {
@@ -83,9 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrenchHeight = wrench.offsetHeight || 140;
     const travel = Math.max(railHeight - wrenchHeight, 0);
     
-    // Use transform for performance
     wrench.style.transform = `translateX(-50%) translateY(${progress * travel}px)`;
-    
     ticking = false;
   }
 
@@ -96,14 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  window.addEventListener('resize', () => {
-    updateWrench();
-  });
-
-  // Initial call
+  window.addEventListener('resize', updateWrench);
   updateWrench();
 
-  // IntersectionObserver for active states
   const observerOptions = {
     root: null,
     rootMargin: '-30% 0px -50% 0px',
@@ -115,18 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
         
-        // Markers
         markers.forEach(m => {
           m.classList.toggle('active', m.dataset.section === id);
         });
         
-        // Nav links
         navLinks.forEach(link => {
           const href = link.getAttribute('href');
           link.classList.toggle('active', href === `#${id}`);
         });
         
-        // Grip animation on inner
         const inner = document.getElementById('wrenchInner');
         if (inner) {
           inner.classList.add('gripping');
@@ -137,9 +99,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   sections.forEach(sec => observer.observe(sec));
-
-  // Also observe home specially if needed
-  function setupNavObserver() {
-    // fallback already covered
-  }
 });
